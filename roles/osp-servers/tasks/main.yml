@@ -4,6 +4,7 @@
 
 - name: Create new server instances and attaches them a network and passes metadata to the instance
   os_server:
+    state: present
     name: "{{ item.value | json_query('name') }}"
     flavor: "{{ item.value | json_query('flavor') }}"
     image: "{{ item.value | json_query('image') }}"
